@@ -25,3 +25,23 @@ class TestBoundingBox extends AnyFunSuite:
   testBoundingBox("complex group", complexGroup, 30, 60, 470, 320)
 
 end TestBoundingBox
+
+class TestConstructors extends AnyFunSuite:
+
+  test("rectangle must have pos dimensions"):
+    assertThrows[IllegalArgumentException](Rectangle(0, 5))
+    assertThrows[IllegalArgumentException](Rectangle(5, 0))
+    assertThrows[IllegalArgumentException](Rectangle(-5, 5))
+    assertThrows[IllegalArgumentException](Rectangle(5, -5))
+
+  test("ellipse radius must be pos"):
+    assertThrows[IllegalArgumentException](Ellipse(0, 5))
+    assertThrows[IllegalArgumentException](Ellipse(5, 0))
+    assertThrows[IllegalArgumentException](Ellipse(-5, 5))
+    assertThrows[IllegalArgumentException](Ellipse(5, -5))
+
+  test("groups should be non-empty"):
+    assertThrows[IllegalArgumentException](Group())
+
+end TestConstructors
+
