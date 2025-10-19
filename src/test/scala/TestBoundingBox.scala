@@ -26,6 +26,7 @@ class TestBoundingBox extends AnyFunSuite:
 
 end TestBoundingBox
 
+//test constructors and if requirements pass
 class TestConstructors extends AnyFunSuite:
 
   test("rectangle must have pos dimensions"):
@@ -45,7 +46,7 @@ class TestConstructors extends AnyFunSuite:
 
 end TestConstructors
 
-class TestSize extends AnyFunSuite:
+class TestSize extends AnyFunSuite: //test size according to bounding box tests
   
   def testSize(description: String, s: Shape, expected: Int): Unit =
     test(description):
@@ -61,7 +62,7 @@ class TestSize extends AnyFunSuite:
 end TestSize
 
 
-class TestHeight extends AnyFunSuite:
+class TestHeight extends AnyFunSuite: //test height according to bounding box tests
 
   def testHeight(description: String, s: Shape, expected: Int): Unit =
     test(description):
@@ -77,7 +78,7 @@ class TestHeight extends AnyFunSuite:
 end TestHeight
 
 
-class TestScale extends AnyFunSuite:
+class TestScale extends AnyFunSuite: //test scale according to bounding box tests
   def testScale(description: String, s: Shape, f: Int, x: Int, y: Int, width: Int, height: Int): Unit =
     test(description):
       val Location(u, v, Rectangle(w, h)) = (boundingBox(scale(s, f)): @unchecked)
